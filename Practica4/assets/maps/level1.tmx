@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="10" tilewidth="35" tileheight="35" nextobjectid="28">
+ <tileset firstgid="1" name="tiles-spritesheet" tilewidth="35" tileheight="35" spacing="1" tilecount="156" columns="12">
+  <image source="../images/tiles_spritesheet.png" width="457" height="468"/>
+ </tileset>
+ <tileset firstgid="157" name="small_tiles" tilewidth="35" tileheight="11" spacing="1" margin="1" tilecount="468" columns="12">
+  <image source="../images/tiles_spritesheet.png" width="457" height="468"/>
+ </tileset>
+ <layer name="Sky" width="20" height="10">
+  <data encoding="csv">
+145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,
+145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,
+145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,
+145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,
+145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,
+145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,
+145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,
+145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,
+145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,
+145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145,145
+</data>
+ </layer>
+ <layer name="collision" width="20" height="10" offsetx="-3" offsety="2">
+  <properties>
+   <property name="collision" value="true"/>
+  </properties>
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,110,545,545,545,545,110,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,110,110,110,110,110,0,0,110,110,110,110,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,110,110,110,110,0,0,0,0,0,0,0,0,110,110,110,110,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+92,92,92,92,105,0,0,0,0,0,0,0,0,0,129,92,92,92,92,92
+</data>
+ </layer>
+ <objectgroup name="Capa de Objetos 1">
+  <object id="1" name="player" type="player" gid="147" x="35" y="314" width="35" height="35">
+   <properties>
+    <property name="bouncing" value="20"/>
+    <property name="group" value="players"/>
+    <property name="jumping_speed" value="500"/>
+    <property name="texture" value="player_spritesheet"/>
+    <property name="walking_speed" value="200"/>
+   </properties>
+  </object>
+  <object id="6" name="enemy0" type="ground_enemy" gid="146" x="141" y="243" width="35" height="35">
+   <properties>
+    <property name="direction" value="1"/>
+    <property name="group" value="enemies"/>
+    <property name="score" value="100"/>
+    <property name="texture" value="slime_image"/>
+    <property name="walking_distance" value="60"/>
+    <property name="walking_speed" value="50"/>
+   </properties>
+  </object>
+  <object id="10" name="goal" type="goal" gid="148" x="484" y="309" width="35" height="35">
+   <properties>
+    <property name="group" value="goals"/>
+    <property name="next_level" value="assets/levels/level2.json"/>
+    <property name="texture" value="goal_image"/>
+   </properties>
+  </object>
+  <object id="12" name="running_enemy0" type="running_enemy" gid="146" x="231.5" y="173.5" width="35" height="35">
+   <properties>
+    <property name="detection_distance" value="300"/>
+    <property name="direction" value="1"/>
+    <property name="group" value="enemies"/>
+    <property name="running_speed" value="200"/>
+    <property name="score" value="200"/>
+    <property name="texture" value="slime_image"/>
+    <property name="walking_distance" value="100"/>
+    <property name="walking_speed" value="50"/>
+   </properties>
+  </object>
+  <object id="13" name="enemy1" type="flying_enemy" gid="146" x="366.5" y="67.5" width="35" height="35">
+   <properties>
+    <property name="direction" value="-1"/>
+    <property name="group" value="enemies"/>
+    <property name="score" value="150"/>
+    <property name="texture" value="fly_spritesheet"/>
+    <property name="walking_distance" value="80"/>
+    <property name="walking_speed" value="75"/>
+   </properties>
+  </object>
+  <object id="14" name="enemy2" type="ground_enemy" gid="146" x="604.5" y="241.5" width="35" height="35">
+   <properties>
+    <property name="direction" value="-1"/>
+    <property name="group" value="enemies"/>
+    <property name="score" value="100"/>
+    <property name="texture" value="slime_image"/>
+    <property name="walking_distance" value="30"/>
+    <property name="walking_speed" value="50"/>
+   </properties>
+  </object>
+  <object id="15" name="coin0" type="coin" gid="25" x="61" y="199" width="35" height="35">
+   <properties>
+    <property name="group" value="coins"/>
+    <property name="score" value="50"/>
+    <property name="texture" value="coin_image"/>
+   </properties>
+  </object>
+  <object id="20" name="coin2" type="coin" gid="25" x="272.5" y="75.5" width="35" height="35">
+   <properties>
+    <property name="group" value="coins"/>
+    <property name="score" value="50"/>
+    <property name="texture" value="coin_image"/>
+   </properties>
+  </object>
+  <object id="21" name="coin1" type="coin" gid="25" x="170.5" y="122.5" width="35" height="35">
+   <properties>
+    <property name="group" value="coins"/>
+    <property name="score" value="50"/>
+    <property name="texture" value="coin_image"/>
+   </properties>
+  </object>
+  <object id="22" name="coin3" type="coin" gid="25" x="501.5" y="41.5" width="35" height="35">
+   <properties>
+    <property name="group" value="coins"/>
+    <property name="score" value="50"/>
+    <property name="texture" value="coin_image"/>
+   </properties>
+  </object>
+  <object id="23" name="coin4" type="coin" gid="25" x="494.5" y="167.5" width="35" height="35">
+   <properties>
+    <property name="group" value="coins"/>
+    <property name="score" value="50"/>
+    <property name="texture" value="coin_image"/>
+   </properties>
+  </object>
+  <object id="24" name="checkpoint" type="checkpoint" gid="150" x="421" y="91" width="35" height="35">
+   <properties>
+    <property name="group" value="checkpoints"/>
+    <property name="texture" value="checkpoint_image"/>
+   </properties>
+  </object>
+  <object id="27" name="score0" type="score" gid="516" x="8" y="25" width="35" height="11">
+   <properties>
+    <property name="group" value="hud"/>
+    <property name="text" value="Score: 0"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="Fondo" width="20" height="10">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,41,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+</map>
